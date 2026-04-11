@@ -21,7 +21,14 @@ export const Content = () => {
                     <Typography sx={{ mt: 2, color: "#aaa", fontSize: { xs: "0.95rem", md: "1.05rem" }, maxWidth: "560px", mx: "auto", lineHeight: 1.7 }}>
                         Gestiona, analiza y optimiza tus finanzas desde un solo lugar. Control total, decisiones inteligentes.
                     </Typography>
-                    <Button sx={btnHero}>Comenzar gratis</Button>
+                            <Button
+                            sx={btnHero}
+                            href="https://github.com/AnyeloBenitezzz14/Frontend-Final"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >
+                            Ve al repo de GitHub
+                            </Button>
                 </Box>
             </Box>
 

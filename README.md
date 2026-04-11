@@ -1,16 +1,81 @@
-# React + Vite
+🧠 Nombre del Proyecto: Nigga Bank
+📖 Descripción
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+La Aplicación Nigga Bank es una aplicación web completa diseñada para administrar productos, manejar la autenticación de usuarios y ofrecer una experiencia fluida e intuitiva. Está construida con tecnologías modernas como React, Vite y Axios, y cuenta con una arquitectura modular que facilita su mantenimiento y escalabilidad.
 
-Currently, two official plugins are available:
+🚀 Instalación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
-## React Compiler
+# Clonar el repositorio
+git clone https://github.com/AnyeloBenitezzz14/Frontend-Final.git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Entrar a la carpeta del proyecto
+cd <NOMBRE_DEL_PROYECTO>
 
-## Expanding the ESLint configuration
+# Instalar dependencias
+npm install
+▶️ Ejecución
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Para iniciar la aplicación en modo desarrollo:
+
+npm run dev
+
+Luego abre tu navegador en:
+
+http://localhost:5173
+🛠️ Tecnologías Usadas
+Frontend: React, React Router DOM, MUI
+Backend: Node.js, Express.js
+Base de datos: (MongoDB)
+Build Tool: Vite
+Cliente HTTP: Axios
+Autenticación: LocalStorage, AuthContext
+PWA: VitePWA
+🏗️ Arquitectura
+
+El proyecto sigue una arquitectura modular organizada por funcionalidades:
+
+src/
+├── App.jsx
+├── AppRoutes.jsx
+├── main.jsx
+├── features/
+│   ├── auth/
+│   │   ├── context/
+│   │   │   ├── AuthContext.jsx
+│   │   ├── api/
+│   │   │   ├── axios.js
+│   │   ├── services/
+│   │   │   ├── Auth.service.js
+│   ├── productos/
+│   │   ├── ProductoForm.jsx
+│   │   ├── ProductoList.jsx
+│   │   ├── Myaccount.jsx
+
+
+Aquí puedes agregar una imagen de tu aplicación
+
+![alt text](image.png)
+🔐 Variables de Entorno
+
+Crea un archivo .env en la raíz del proyecto y agrega:
+
+VITE_API_URL=http://localhost:3000/api
+
+Ajusta la URL según tu backend.
+
+🔗 Enlaces
+Repositorio Frontend: (https://github.com/AnyeloBenitezzz14/Frontend-Final.git)
+Repositorio Backend: (https://github.com/AnyeloBenitezzz14/back_final.git)
+Deploy front: (https://vercel.com/anyelobenitezzz14s-projects/frontend-final/53GZ6FphK6soosEK1dDivu2xRKvG)
+
+👤 Autor
+
+Anyelo Benítez
+
+📄 Licencia
+
+Este proyecto es de uso académico.
+
+GitHub: https://github.com/AnyeloBenitezzz14
