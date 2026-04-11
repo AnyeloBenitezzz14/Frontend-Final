@@ -72,7 +72,7 @@ Deploy front: (https://vercel.com/anyelobenitezzz14s-projects/frontend-final/53G
 
 👤 Autor
 
-Anyelo Benítez
+Anyelo Benítez, aprendiz sena 
 
 📄 Licencia
 
