@@ -9,7 +9,6 @@ import {
   InputAdornment, IconButton, Fade
 } from '@mui/material'
 
-import PersonIcon from '@mui/icons-material/Person'
 import EmailIcon from '@mui/icons-material/Email'
 import LockIcon from '@mui/icons-material/Lock'
 import LoginIcon from '@mui/icons-material/Login'
@@ -69,6 +68,8 @@ export const Myaccount = () => {
   )
 }
 
+/* ================= LOGIN ================= */
+
 const Login = () => {
   const { login } = useAuth()
   const navigate = useNavigate()
@@ -93,9 +94,9 @@ const Login = () => {
       const token = res?.data?.token
       if (!token) return alert("Error de autenticación")
 
-      login(token) // ✅ actualiza contexto
+      login(token)
 
-      navigate('/posts') // ✅ navegación correcta
+      navigate('/posts')
 
     } catch (err) {
       alert(err?.response?.data?.message || "Error al iniciar sesión")
@@ -135,10 +136,7 @@ const Login = () => {
           ),
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton
-                onClick={() => setShowPassword(!showPassword)}
-                sx={{ color: "#555" }}
-              >
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
                 {showPassword ? <VisibilityOff /> : <Visibility />}
               </IconButton>
             </InputAdornment>
@@ -153,6 +151,8 @@ const Login = () => {
     </Box>
   )
 }
+
+/* ================= REGISTER ================= */
 
 const Register = () => {
   const { login } = useAuth()
@@ -183,9 +183,9 @@ const Register = () => {
       const token = res?.data?.token
       if (!token) return alert("Error en el registro")
 
-      login(token) // ✅ actualiza contexto
+      login(token)
 
-      navigate('/posts') // ✅ navegación correcta
+      navigate('/posts')
 
     } catch (err) {
       alert(err?.response?.data?.message || "Error al registrarse")
@@ -225,10 +225,7 @@ const Register = () => {
           ),
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton
-                onClick={() => setShowPassword(!showPassword)}
-                sx={{ color: "#555" }}
-              >
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
                 {showPassword ? <VisibilityOff /> : <Visibility />}
               </IconButton>
             </InputAdornment>
@@ -242,4 +239,58 @@ const Register = () => {
       </Button>
     </Box>
   )
+}
+
+/* ================= STYLES ================= */
+
+const containerStyle = {
+  minHeight: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  background: "#0f0f0f"
+}
+
+const cardStyle = {
+  width: { xs: "90%", sm: "85%", md: "400px" },
+  p: 4,
+  borderRadius: "16px",
+  background: "#141414",
+  border: "0.5px solid #242424"
+}
+
+const headerStyle = { textAlign: "center", mb: 3 }
+
+const switchStyle = {
+  display: "flex",
+  justifyContent: "center",
+  gap: 1,
+  mt: 2
+}
+
+const tabStyle = {
+  borderRadius: "8px",
+  textTransform: "none"
+}
+
+const formStyle = {
+  display: "flex",
+  flexDirection: "column",
+  gap: 2
+}
+
+const inputStyle = {
+  "& .MuiOutlinedInput-root": {
+    background: "#1a1a1a",
+    borderRadius: "8px",
+    color: "#fff"
+  }
+}
+
+const btnStyle = {
+  mt: 1,
+  background: "#7c3aed",
+  color: "#fff",
+  textTransform: "none",
+  "&:hover": { background: "#6d28d9" }
 }
