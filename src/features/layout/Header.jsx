@@ -12,8 +12,8 @@ export const Header = () => {
     const { isAuth } = useAuth()
     const location = useLocation()
 
-    // No mostrar header en la ruta /posts
-    if (location.pathname === '/posts') return null
+    // No mostrar header solo cuando estés logueado Y en /posts
+    if (isAuth && location.pathname === '/posts') return null
 
     return (
         <>
