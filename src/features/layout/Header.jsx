@@ -5,9 +5,11 @@ import { Box, Typography, Button, AppBar, Toolbar, IconButton, Drawer, List, Lis
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
+import { useAuth } from '../auth/context/AuthContext'
 
 export const Header = () => {
     const [open, setOpen] = useState(false)
+    const { isAuth } = useAuth()
 
     return (
         <>
@@ -47,23 +49,25 @@ export const Header = () => {
                     </Box>
 
                     {/* BOTÓN DESKTOP */}
-                    <Button
-                        component={NavLink}
-                        to="/Myaccount"
-                        startIcon={<AccountCircleIcon sx={{ fontSize: 18 }} />}
-                        sx={{
-                            display: { xs: "none", md: "flex" },
-                            background: "#7c3aed",
-                            color: "#fff",
-                            fontWeight: 500,
-                            borderRadius: "8px",
-                            textTransform: "none",
-                            px: 2.5,
-                            "&:hover": { background: "#6d28d9" }
-                        }}
-                    >
-                        Iniciar sesión
-                    </Button>
+                    {!isAuth && (
+                        <Button
+                            component={NavLink}
+                            to="/Myaccount"
+                            startIcon={<AccountCircleIcon sx={{ fontSize: 18 }} />}
+                            sx={{
+                                display: { xs: "none", md: "flex" },
+                                background: "#7c3aed",
+                                color: "#fff",
+                                fontWeight: 500,
+                                borderRadius: "8px",
+                                textTransform: "none",
+                                px: 2.5,
+                                "&:hover": { background: "#6d28d9" }
+                            }}
+                        >
+                            Iniciar sesión
+                        </Button>
+                    )}
 
                     <IconButton
                         onClick={() => setOpen(true)}
@@ -127,24 +131,26 @@ export const Header = () => {
                     ))}
                 </List>
 
-                <Button
-                    component={NavLink}
-                    to="/Myaccount"
-                    onClick={() => setOpen(false)}
-                    startIcon={<AccountCircleIcon sx={{ fontSize: 18 }} />}
-                    sx={{
-                        mt: 4,
-                        background: "#7c3aed",
-                        color: "#fff",
-                        fontWeight: 500,
-                        borderRadius: "8px",
-                        textTransform: "none",
-                        width: "100%",
-                        "&:hover": { background: "#6d28d9" }
-                    }}
-                >
-                    Iniciar sesión
-                </Button>
+                {!isAuth && (
+                    <Button
+                        component={NavLink}
+                        to="/Myaccount"
+                        onClick={() => setOpen(false)}
+                        startIcon={<AccountCircleIcon sx={{ fontSize: 18 }} />}
+                        sx={{
+                            mt: 4,
+                            background: "#7c3aed",
+                            color: "#fff",
+                            fontWeight: 500,
+                            borderRadius: "8px",
+                            textTransform: "none",
+                            width: "100%",
+                            "&:hover": { background: "#6d28d9" }
+                        }}
+                    >
+                        Iniciar sesión
+                    </Button>
+                )}
             </Drawer>
         </>
     )

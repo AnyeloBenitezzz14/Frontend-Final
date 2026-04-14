@@ -6,14 +6,14 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(), VitePWA({
     registerType: "autoUpdate",
-    includeAssets: ['favicon.svg', 'robots.txt', 'icons.svg', 'react.svg', 'vite.svg', 'pwa-192x192.png', 'pwa-512x512.png', 'icono.png'],
+    includeAssets: ['favicon.svg', 'robots.txt', 'icons.svg', 'react.svg', 'vite.svg', 'Portada.png'],
     workbox:{
       navigateFallback: "/index.html",
-      globPatterns: ["**/*.{js,jsx,css,html,ico,png,svg}"]
+      globPatterns: ["*/.{js,jsx,css,html,ico,png,svg}"]
     },
     manifest: {
-      name: "Control de Gastos Diarios",
-      short_name: "GastosApp",
+      name: "Gestor de Gastos",
+      short_name: "Niggabank",
       description: "Aplicación para registrar y controlar tus gastos diarios de forma rápida y sencilla",
       start_url: "/",
       display: "standalone",
@@ -22,13 +22,13 @@ export default defineConfig({
 
       screenshots: [
         {
-          src: '/img/gastos.png',
+          src: '/img/Portada.png',
           sizes: '512x512',
           type: "image/png",
           form_factor: "narrow"
         },
         {
-          src: '/img/gastos-desktop.png',
+          src: '/img/Portada.png',
           sizes: "1280x720",
           type: "image/png",
           form_factor: "wide"
@@ -37,17 +37,17 @@ export default defineConfig({
       ,
       icons: [
         {
-          src: '/img/pwa-192x192.png',
+          src: '/img/Portada.png',
           sizes: '192x192',
           type: 'image/png'
         },
         {
-          src: '/img/icono.png',
+          src: '/img/Portada.png',
           sizes: '512x512',
           type: 'image/png'
         },
         {
-          src: '/img/icono.png',
+          src: '/img/Portada.png',
           sizes: '512x512',
           type: 'image/png',
           purpose: 'maskable'
