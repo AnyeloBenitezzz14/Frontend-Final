@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { useAuth } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
 import { loginRequest, registerRequest } from '../services/Auth.service'
 
 import {
@@ -67,8 +68,6 @@ export const Myaccount = () => {
     </Box>
   )
 }
-
-import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const { login } = useAuth()
@@ -154,7 +153,6 @@ const Login = () => {
     </Box>
   )
 }
-import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   const { login } = useAuth()

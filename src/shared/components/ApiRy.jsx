@@ -9,7 +9,6 @@ import SearchIcon from '@mui/icons-material/Search'
 export const Api = () => {
     const [characters, setCharacters] = useState([])
     const [page, setPage] = useState(1)
-    const [info, setInfo] = useState({})
     const [query, setQuery] = useState('')
 
     useEffect(() => {
@@ -20,13 +19,11 @@ export const Api = () => {
         })
             .then(({ data }) => {
                 setCharacters(data.results || [])
-                setInfo(data.info || {})
             })
             .catch((err) => {
                 if (axios.isCancel(err)) return
                 if (err.response?.status === 404) {
                     setCharacters([])
-                    setInfo({})
                     return
                 }
                 console.error(err)
