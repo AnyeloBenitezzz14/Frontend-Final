@@ -16,7 +16,7 @@ import HowToRegIcon from '@mui/icons-material/HowToReg'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 
-export const Myaccount = () => {
+const Myaccount = () => {
   const [view, setView] = useState("login")
 
   return (
@@ -294,3 +294,5 @@ const btnStyle = {
   textTransform: "none",
   "&:hover": { background: "#6d28d9" }
 }
+
+export default Myaccount
