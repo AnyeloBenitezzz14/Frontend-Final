@@ -5,7 +5,7 @@ import { Box, Typography, Button, AppBar, Toolbar, IconButton, Drawer, List, Lis
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-import { useAuth } from '../auth/context/AuthContext'
+import { useAuth } from '../auth/hooks/useAuth'
 
 export const Header = () => {
     const [open, setOpen] = useState(false)

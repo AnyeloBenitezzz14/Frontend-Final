@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import ProductoForm from './features/auth/components/ProductoForm';
 import ProductoList from './features/auth/components/ProductoList';
 import Myaccount from './features/auth/components/Myaccount';
-import { useAuth } from './features/auth/context/AuthContext';
+import { useAuth } from './features/auth/hooks/useAuth';
 import { listProductos } from './features/auth/services/Productos.Service';
 
 import { Container, Box, Typography, Button, TextField } from '@mui/material';
