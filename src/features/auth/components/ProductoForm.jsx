@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { createProducto } from '../services/Productos.Service';
-import { useAuth } from '../context/UseAuth';
+import { useAuth } from '../hooks/useAuth';
 import { Box, TextField, Button, Typography, MenuItem } from '@mui/material';
 
 export default function ProductoForm({ onSaved }) {
