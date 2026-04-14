@@ -54,8 +54,6 @@ src/
 │   │   ├── Myaccount.jsx
 
 
-Aquí puedes agregar una imagen de tu aplicación
-
 ![alt text](image.png)
 🔐 Variables de Entorno
 
@@ -63,7 +61,6 @@ Crea un archivo .env en la raíz del proyecto y agrega:
 
 VITE_API_URL=http://localhost:3000/api
 
-Ajusta la URL según tu backend.
 
 🔗 Enlaces
 Repositorio Frontend: (https://github.com/AnyeloBenitezzz14/Frontend-Final.git)
