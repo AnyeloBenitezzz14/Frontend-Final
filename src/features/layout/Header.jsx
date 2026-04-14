@@ -12,6 +12,9 @@ export const Header = () => {
     const { isAuth } = useAuth()
     const location = useLocation()
 
+    // No mostrar header en la ruta /posts
+    if (location.pathname === '/posts') return null
+
     return (
         <>
             <AppBar position="fixed" sx={{
@@ -43,9 +46,7 @@ export const Header = () => {
                     {/* NAV DESKTOP */}
                     <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
                         <NavItem to="/" label="Inicio" />
-                        <NavItem to="/#beneficios" label="Beneficios" />
                         <NavItem to="/#como-funciona" label="Cómo funciona" />
-                        <NavItem to="/precios" label="Precios" />
                         <NavItem to="/Api" label="API" />
                     </Box>
 
@@ -105,9 +106,7 @@ export const Header = () => {
                 <List sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                     {[
                         { to: "/", label: "Inicio" },
-                        { to: "/#beneficios", label: "Beneficios" },
                         { to: "/#como-funciona", label: "Cómo funciona" },
-                        { to: "/precios", label: "Precios" },
                         { to: "/Api", label: "API" }
                     ].map((item) => (
                         <ListItem key={item.label} disablePadding>
