@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Box, Typography, Button, AppBar, Toolbar, IconButton, Drawer, List, ListItem } from "@mui/material"
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -10,6 +10,7 @@ import { useAuth } from '../auth/hooks/useAuth'
 export const Header = () => {
     const [open, setOpen] = useState(false)
     const { isAuth } = useAuth()
+    const location = useLocation()
 
     return (
         <>
@@ -49,7 +50,7 @@ export const Header = () => {
                     </Box>
 
                     {/* BOTÓN DESKTOP */}
-                    {!isAuth && (
+                    {(!isAuth || location.pathname !== '/posts') && (
                         <Button
                             component={NavLink}
                             to="/Myaccount"
